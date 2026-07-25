@@ -1,8 +1,13 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer
+import streamlit_webrtc
+import aiortc
+import aioice
+import av
+import sys
 
-st.title("Test")
-
-ctx = webrtc_streamer(key="test")
-
-st.write(ctx.state.playing)
+st.write("Python:", sys.version)
+st.write("streamlit:", st.__version__)
+st.write("streamlit-webrtc:", streamlit_webrtc.__version__)
+st.write("aiortc:", aiortc.__version__)
+st.write("aioice:", aioice.__version__)
+st.write("av:", av.__version__)
