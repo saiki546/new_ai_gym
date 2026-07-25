@@ -1,13 +1,9 @@
 import streamlit as st
-import streamlit_webrtc
-import aiortc
-import aioice
-import av
-import sys
+from streamlit_webrtc import webrtc_streamer, WebRtcMode
 
-st.write("Python:", sys.version)
-st.write("streamlit:", st.__version__)
-st.write("streamlit-webrtc:", streamlit_webrtc.__version__)
-st.write("aiortc:", aiortc.__version__)
-st.write("aioice:", aioice.__version__)
-st.write("av:", av.__version__)
+ctx = webrtc_streamer(
+    key="test",
+    mode=WebRtcMode.SENDONLY,
+)
+
+st.write(ctx.state.playing)
