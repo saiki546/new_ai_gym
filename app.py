@@ -1,8 +1,8 @@
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer
 
-st.title("Camera Test")
+st.title("Test")
 
-webrtc_streamer(
-    key="camera",
-)
+ctx = webrtc_streamer(key="test")
+
+st.write(ctx.state.playing)
